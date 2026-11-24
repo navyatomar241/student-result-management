@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Student Result Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="inst-logo">M</div>
+                <div class="inst-info">
+                    <h3>MITS Gwalior</h3>
+                    <p>Teacher Portal</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Navigation</div>
+                <div class="nav-item active" onclick="showSection('dashboard', this)">
+                    <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                    Teacher Dashboard
+                </div>
+                <div class="nav-item" onclick="showSection('students', this)">
+                    <i data-lucide="users" style="width: 18px; height: 18px;"></i>
+                    Student List
+                </div>
+                <div class="nav-item" onclick="showSection('subjects', this)">
+                    <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
+                    Subject List
+                </div>
+                <div class="nav-item" onclick="showSection('marks', this)">
+                    <i data-lucide="file-spreadsheet" style="width: 18px; height: 18px;"></i>
+                    Enter & Manage Marks
+                </div>
+                <div class="nav-item" onclick="showSection('results', this)">
+                    <i data-lucide="award" style="width: 18px; height: 18px;"></i>
+                    View Results
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-badge">
+                    <div class="user-avatar" id="sidebar-user-avatar">T</div>
+                    <div class="user-details">
+                        <div class="user-name" id="sidebar-user-name">Faculty Member</div>
+                        <div class="user-role" id="sidebar-user-role">Teacher</div>
+                    </div>
+                </div>
+                <button class="btn-logout" title="Sign Out" onclick="Auth.logout()">
+                    <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="btn-mobile-menu" class="mobile-menu-btn">
+                        <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+                    </button>
+                    <div class="topbar-title">
+                        <h2 id="page-title">Faculty Dashboard</h2>
+                    </div>
+                </div>
+                <div class="topbar-actions">
+                    <span class="badge" style="background:var(--accent-sage); color:var(--primary); font-size:0.75rem;">
+                        Department of CSE / IT
+                    </span>
+                    <button class="btn btn-primary btn-sm" onclick="MarksModule.openAddModal()">
+                        <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+                        Enter Student Marks
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content-body">
+                <!-- ========================================================
+                     SECTION 1: DASHBOARD OVERVIEW
+                     ======================================================== -->
+                <section id="section-dashboard">
+                    <!-- 3 Summary Stat Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Available Students</div>
+                                <div class="stat-value" id="tstat-students">0</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="users" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Available Subjects</div>
+                                <div class="stat-value" id="tstat-subjects">0</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="book-open" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Total Marks Entered</div>
+                                <div class="stat-value" id="tstat-marks">0</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="file-check" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Marks Entry Callout -->
+                    <div class="card" style="background: linear-gradient(to right, #ffffff, #f0fdf4); border-left: 4px solid var(--secondary);">
+                        <div class="card-body" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 4px;">Record Student Marks</h3>
+                                <p style="font-size: 0.85rem;">Input marks for any student and subject. The C++ backend automatically recomputes the aggregate, percentage, and assigned grade.</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="MarksModule.openAddModal()">
+                                <i data-lucide="file-plus" style="width: 16px; height: 16px;"></i>
+                                Enter Marks Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recently Updated Marks -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Recently Updated Marks</span>
+                            <button class="btn btn-outline btn-sm" onclick="showSection('marks')">View Full Marks Table</button>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student</th>
+                                            <th>Subject</th>
+                                            <th>Marks Obtained</th>
+                                            <th>Maximum Marks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="t-recent-marks-body">
+                                        <tr><td colspan="4" style="text-align:center;padding:1.5rem;">Loading recently recorded marks...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================
+                     SECTION 2: STUDENT LIST
+                     ======================================================== -->
+                <section id="section-students" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="card-title">Enrolled Students</h3>
+                                <p style="font-size: 0.8125rem;">View registered students eligible for examination marking.</p>
+                            </div>
+                            <input type="text" id="student-search-input" class="form-control" placeholder="Search student name or roll..." style="max-width: 250px;">
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student ID</th>
+                                            <th>Student Name</th>
+                                            <th>Roll Number</th>
+                                            <th>Class / Semester</th>
+                                            <th>Enrolled Date</th>
+                                            <th style="text-align:right;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="students-table-body">
+                                        <!-- Loaded via students.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================
+                     SECTION 3: SUBJECT LIST
+                     ======================================================== -->
+                <section id="section-subjects" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="card-title">Academic Courses & Subjects</h3>
+                                <p style="font-size: 0.8125rem;">Approved curriculum subjects for evaluation.</p>
+                            </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject ID</th>
+                                            <th>Subject Name</th>
+                                            <th>Created Date</th>
+                                            <th style="text-align:right;">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="subjects-table-body">
+                                        <!-- Loaded via subjects.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================
+                     SECTION 4: ENTER & MANAGE MARKS
+                     ======================================================== -->
+                <section id="section-marks" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="card-title">Examination Marks Registry</h3>
+                                <p style="font-size: 0.8125rem;">Enter or modify student exam scores with instant C++ validation.</p>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <select id="marks-filter-student" class="form-select" style="max-width: 220px;">
+                                    <option value="">All Students</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="MarksModule.openAddModal()">
+                                    <i data-lucide="file-plus" style="width: 16px; height: 16px;"></i>
+                                    Record Marks
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student ID</th>
+                                            <th>Student Name</th>
+                                            <th>Subject</th>
+                                            <th>Marks Obtained</th>
+                                            <th>Maximum Marks</th>
+                                            <th>Percentage</th>
+                                            <th style="text-align:right;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="marks-table-body">
+                                        <!-- Loaded via marks.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================
+                     SECTION 5: VIEW RESULTS
+                     ======================================================== -->
+                <section id="section-results" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div>
+                                <h3 class="card-title">Computed Student Results</h3>
+                                <p style="font-size: 0.8125rem;">Automated grade card status computed by the C++ engine.</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="ResultsModule.triggerRecalculateAll()">
+                                <i data-lucide="refresh-cw" style="width: 16px; height: 16px;"></i>
+                                Recalculate All
+                            </button>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student ID</th>
+                                            <th>Name</th>
+                                            <th>Roll No</th>
+                                            <th>Total Marks</th>
+                                            <th>Percentage</th>
+                                            <th>Grade</th>
+                                            <th>Status</th>
+                                            <th style="text-align:right;">Mark Sheet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="results-table-body">
+                                        <!-- Loaded via results.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Marks Entry Modal -->
+    <div class="modal-overlay" id="marks-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="marks-modal-title">Enter Student Marks</h3>
+                <button class="modal-close" onclick="App.closeModal('marks-modal')">✕</button>
+            </div>
+            <form id="marks-form">
+                <input type="hidden" id="is-editing-marks" value="false">
+                <input type="hidden" id="marks-id-field" value="">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label">Select Student</label>
+                        <select id="marks-student-select" class="form-select" required>
+                            <option value="">-- Choose Student --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Select Subject</label>
+                        <select id="marks-subject-select" class="form-select" required>
+                            <option value="">-- Choose Subject --</option>
+                        </select>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label class="form-label">Maximum Marks</label>
+                            <input type="number" id="marks-max-field" class="form-control" value="100" min="1" max="500" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Marks Obtained</label>
+                            <input type="number" step="0.5" id="marks-obtained-field" class="form-control" placeholder="e.g. 85" min="0" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="App.closeModal('marks-modal')">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save & Calculate Result</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Printable Mark Sheet Modal -->
+    <div class="modal-overlay" id="marksheet-modal">
+        <div class="modal-container" style="max-width: 860px;">
+            <div class="modal-header no-print">
+                <h3>Student Examination Mark Sheet</h3>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn btn-primary btn-sm" onclick="window.print()">
+                        <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+                        Print
+                    </button>
+                    <button class="modal-close" onclick="App.closeModal('marksheet-modal')">✕</button>
+                </div>
+            </div>
+            <div class="modal-body" id="marksheet-modal-content">
+                <!-- Dynamically rendered -->
+            </div>
+            <div class="modal-footer no-print">
+                <button class="btn btn-outline" onclick="App.closeModal('marksheet-modal')">Close</button>
+                <button class="btn btn-primary" onclick="window.print()">Print Mark Sheet</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/students.js"></script>
+    <script src="js/subjects.js"></script>
+    <script src="js/marks.js"></script>
+    <script src="js/results.js"></script>
+
+    <script>
+        // Guard route: Only Teacher or Admin permitted
+        if (!Auth.requireRole(['teacher', 'admin'])) {
+            throw new Error('Access denied');
+        }
+
+        const TeacherDashboard = (() => {
+            async function loadStats() {
+                try {
+                    const stats = await App.apiFetch('/api/stats');
+                    document.getElementById('tstat-students').textContent = stats.total_students || 0;
+                    document.getElementById('tstat-subjects').textContent = stats.total_subjects || 0;
+                    document.getElementById('tstat-marks').textContent = stats.total_marks_entered || 0;
+
+                    // Render recent marks
+                    const mBody = document.getElementById('t-recent-marks-body');
+                    const recentMarks = stats.recent_marks || [];
+                    if (recentMarks.length > 0) {
+                        mBody.innerHTML = recentMarks.map(m => `
+                            <tr>
+                                <td><strong>${App.escapeHTML(m.student_name || m.student_id)}</strong></td>
+                                <td>${App.escapeHTML(m.subject_name || m.subject_id)}</td>
+                                <td><strong>${m.marks_obtained}</strong></td>
+                                <td>${m.maximum_marks}</td>
+                            </tr>
+                        `).join('');
+                    } else {
+                        mBody.innerHTML = `<tr><td colspan="4" style="text-align:center;padding:1.5rem;">No marks recorded yet.</td></tr>`;
+                    }
+                } catch (e) {
+                    console.error('Teacher stats error:', e);
+                }
+            }
+            return { loadStats };
+        })();
+
+        function showSection(sectionId, el) {
+            document.querySelectorAll('main.content-body > section').forEach(sec => sec.style.display = 'none');
+            document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => item.classList.remove('active'));
+
+            const target = document.getElementById(`section-${sectionId}`);
+            if (target) target.style.display = 'block';
+
+            if (el) el.classList.add('active');
+
+            const titleMap = {
+                'dashboard': 'Faculty Dashboard',
+                'students': 'Available Students',
+                'subjects': 'Available Subjects',
+                'marks': 'Enter & Manage Marks',
+                'results': 'Calculated Academic Results'
+            };
+            document.getElementById('page-title').textContent = titleMap[sectionId] || 'Faculty Portal';
+
+            if (sectionId === 'students') StudentsModule.loadStudents();
+            if (sectionId === 'subjects') SubjectsModule.loadSubjects();
+            if (sectionId === 'marks') MarksModule.loadMarks();
+            if (sectionId === 'results') ResultsModule.loadResults();
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            App.initShell();
+            StudentsModule.init();
+            MarksModule.init();
+            lucide.createIcons();
+
+            TeacherDashboard.loadStats();
+
+            try {
+                const [sRes, subRes] = await Promise.all([
+                    App.apiFetch('/api/students'),
+                    App.apiFetch('/api/subjects')
+                ]);
+                MarksModule.populateStudentDropdowns(sRes.students || []);
+                SubjectsModule.populateSubjectDropdowns(subRes.subjects || []);
+            } catch (e) {
+                console.warn(e);
+            }
+        });
+    </script>
+</body>
+</html>

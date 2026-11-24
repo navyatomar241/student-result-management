@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management System - MITS Gwalior</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(13, 148, 136, 0.25);
+            border: 1px solid var(--secondary);
+            color: var(--accent-sage);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+        .role-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: -3rem auto 4rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+        .role-landing-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 2.25rem 1.75rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-modal);
+            text-align: center;
+            transition: var(--transition);
+        }
+        .role-landing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+        .role-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-sm);
+            background-color: var(--accent-sage);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f1f5f9;
+            color: var(--text-main);
+            padding: 0.35rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            margin: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header style="background: white; border-bottom: 1px solid var(--border-light); padding: 1rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="background: var(--primary); color: white; width: 40px; height: 40px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-weight: 700;">
+                    MITS
+                </div>
+                <div>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary);">Madhav Institute of Technology & Science</h3>
+                    <p style="font-size: 0.75rem; color: var(--text-secondary);">Gwalior (M.P.) • Academic Session 2026–27</p>
+                </div>
+            </div>
+            <div>
+                <a href="login.html" class="btn btn-primary">
+                    <i data-lucide="log-in" style="width: 16px; height: 16px;"></i>
+                    Portal Login
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="hero-badge">COLLEGE MICRO PROJECT 2026–27</span>
+        <h1 class="hero-title">Student Result Management System</h1>
+        <p class="hero-subtitle">
+            Centralized academic evaluation system built with C++17 Crow REST backend, Supabase PostgreSQL, and automated result calculation engine.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="login.html" class="btn btn-primary" style="padding: 0.75rem 1.75rem; font-size: 1rem;">
+                Access Dashboard
+            </a>
+            <a href="#architecture" class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.25); padding: 0.75rem 1.5rem; font-size: 1rem;">
+                System Architecture
+            </a>
+        </div>
+    </section>
+
+    <!-- Three User Roles Section -->
+    <section class="role-cards-grid">
+        <!-- Admin Card -->
+        <div class="role-landing-card">
+            <div class="role-icon">
+                <i data-lucide="shield-check" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3 style="margin-bottom: 0.5rem;">Administrator</h3>
+            <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">
+                Manage students, faculty members, academic subjects, view overall examination records and results.
+            </p>
+            <a href="login.html?role=admin" class="btn btn-dark btn-sm" style="width: 100%;">
+                Admin Login
+            </a>
+        </div>
+
+        <!-- Teacher Card -->
+        <div class="role-landing-card">
+            <div class="role-icon">
+                <i data-lucide="graduation-cap" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3 style="margin-bottom: 0.5rem;">Faculty / Teacher</h3>
+            <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">
+                Enter and update examination marks, trigger C++ automated grade calculations, and view student marks.
+            </p>
+            <a href="login.html?role=teacher" class="btn btn-primary btn-sm" style="width: 100%;">
+                Teacher Login
+            </a>
+        </div>
+
+        <!-- Student Card -->
+        <div class="role-landing-card">
+            <div class="role-icon">
+                <i data-lucide="user-check" style="width: 28px; height: 28px;"></i>
+            </div>
+            <h3 style="margin-bottom: 0.5rem;">Student</h3>
+            <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">
+                View personal academic performance, subject-wise marks, percentage, assigned grade, and print mark sheet.
+            </p>
+            <a href="login.html?role=student" class="btn btn-outline btn-sm" style="width: 100%;">
+                Student Login
+            </a>
+        </div>
+    </section>
+
+    <!-- System Architecture Overview -->
+    <section id="architecture" style="max-width: 1100px; margin: 0 auto 5rem; padding: 0 1.5rem;">
+        <div class="card" style="padding: 2.5rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Core Technology Stack & Architecture</h2>
+                <p>Designed for academic rigor, performance, data security, and maintainability.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="padding: 1.5rem; background: var(--bg-ivory); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                    <h4 style="color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="code-2" style="width: 20px; height: 20px; color: var(--secondary);"></i>
+                        C++17 Crow Backend
+                    </h4>
+                    <p style="font-size: 0.85rem; margin-bottom: 1rem;">
+                        High-performance REST API handling validation, JWT verification, and dedicated floating-point result calculation engine.
+                    </p>
+                    <div>
+                        <span class="tech-pill">C++17</span>
+                        <span class="tech-pill">Crow Framework</span>
+                        <span class="tech-pill">nlohmann/json</span>
+                    </div>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-ivory); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                    <h4 style="color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="database" style="width: 20px; height: 20px; color: var(--secondary);"></i>
+                        Supabase PostgreSQL
+                    </h4>
+                    <p style="font-size: 0.85rem; margin-bottom: 1rem;">
+                        Hosted relational database with Row Level Security (RLS), referential integrity constraints, and role isolation.
+                    </p>
+                    <div>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Supabase Auth</span>
+                        <span class="tech-pill">Row Level Security</span>
+                    </div>
+                </div>
+
+                <div style="padding: 1.5rem; background: var(--bg-ivory); border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+                    <h4 style="color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;">
+                        <i data-lucide="layout" style="width: 20px; height: 20px; color: var(--secondary);"></i>
+                        Modern Responsive UI
+                    </h4>
+                    <p style="font-size: 0.85rem; margin-bottom: 1rem;">
+                        Clean, framework-free HTML5, CSS3, and Vanilla JavaScript with browser print-friendly mark sheets.
+                    </p>
+                    <div>
+                        <span class="tech-pill">HTML5 & CSS3</span>
+                        <span class="tech-pill">Vanilla JS</span>
+                        <span class="tech-pill">Lucide Icons</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grading Rules Reference -->
+            <div style="background: white; border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 1.5rem;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">Official Academic Grading Policy</h4>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Percentage Range</th>
+                                <th>Grade Assigned</th>
+                                <th>Academic Status</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>90% – 100%</strong></td>
+                                <td><span class="badge badge-grade-aplus">A+</span></td>
+                                <td><span class="badge badge-pass">Pass</span></td>
+                                <td>Outstanding / Distinction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>80% – 89%</strong></td>
+                                <td><span class="badge badge-grade-a">A</span></td>
+                                <td><span class="badge badge-pass">Pass</span></td>
+                                <td>Excellent</td>
+                            </tr>
+                            <tr>
+                                <td><strong>70% – 79%</strong></td>
+                                <td><span class="badge badge-grade-b">B</span></td>
+                                <td><span class="badge badge-pass">Pass</span></td>
+                                <td>Very Good</td>
+                            </tr>
+                            <tr>
+                                <td><strong>60% – 69%</strong></td>
+                                <td><span class="badge badge-grade-c">C</span></td>
+                                <td><span class="badge badge-pass">Pass</span></td>
+                                <td>Good</td>
+                            </tr>
+                            <tr>
+                                <td><strong>40% – 59%</strong></td>
+                                <td><span class="badge badge-grade-d">D</span></td>
+                                <td><span class="badge badge-pass">Pass</span></td>
+                                <td>Satisfactory</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Below 40%</strong></td>
+                                <td><span class="badge badge-fail">Fail</span></td>
+                                <td><span class="badge badge-fail">Fail</span></td>
+                                <td>Re-examination Required</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary); color: white; padding: 2.5rem 2rem; text-align: center; font-size: 0.875rem;">
+        <p style="color: rgba(255,255,255,0.7);">
+            <strong>Student Result Management System</strong> • Madhav Institute of Technology & Science, Gwalior (2026–27)
+        </p>
+        <p style="color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 6px;">
+            Department of Computer Science & Engineering / Information Technology
+        </p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

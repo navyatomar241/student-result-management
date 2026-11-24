@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Student Result Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .student-hero-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .student-welcome h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .student-welcome p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="inst-logo">M</div>
+                <div class="inst-info">
+                    <h3>MITS Gwalior</h3>
+                    <p>Student Portal</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-title">Navigation</div>
+                <div class="nav-item active" onclick="showSection('dashboard', this)">
+                    <i data-lucide="layout-dashboard" style="width: 18px; height: 18px;"></i>
+                    My Dashboard
+                </div>
+                <div class="nav-item" onclick="showSection('profile', this)">
+                    <i data-lucide="user" style="width: 18px; height: 18px;"></i>
+                    My Academic Profile
+                </div>
+                <div class="nav-item" onclick="showSection('results', this)">
+                    <i data-lucide="award" style="width: 18px; height: 18px;"></i>
+                    My Examination Result
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-badge">
+                    <div class="user-avatar" id="sidebar-user-avatar">S</div>
+                    <div class="user-details">
+                        <div class="user-name" id="sidebar-user-name">Student Name</div>
+                        <div class="user-role" id="sidebar-user-role">Student</div>
+                    </div>
+                </div>
+                <button class="btn-logout" title="Sign Out" onclick="Auth.logout()">
+                    <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <button id="btn-mobile-menu" class="mobile-menu-btn">
+                        <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+                    </button>
+                    <div class="topbar-title">
+                        <h2 id="page-title">Student Academic Dashboard</h2>
+                    </div>
+                </div>
+                <div class="topbar-actions">
+                    <button class="btn btn-primary btn-sm" onclick="printCurrentResult()">
+                        <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+                        Print Mark Sheet
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content-body">
+                <!-- ========================================================
+                     SECTION 1: STUDENT DASHBOARD
+                     ======================================================== -->
+                <section id="section-dashboard">
+                    <!-- Welcome Hero Banner -->
+                    <div class="student-hero-banner">
+                        <div class="student-welcome">
+                            <h2>Welcome back, <span id="banner-student-name">Student</span>!</h2>
+                            <p id="banner-student-details">B.Tech CSE III Sem • Roll No: 0901CS241001</p>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline" style="background:white; color:var(--primary); font-weight:600;" onclick="showSection('results')">
+                                <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
+                                View Full Mark Sheet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metric Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Total Marks</div>
+                                <div class="stat-value" id="card-total-marks">-- / --</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="file-text" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Calculated Percentage</div>
+                                <div class="stat-value" id="card-percentage">--%</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="percent" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Grade Assigned</div>
+                                <div class="stat-value" id="card-grade">--</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="award" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <div class="stat-label">Academic Status</div>
+                                <div class="stat-value" id="card-status">--</div>
+                            </div>
+                            <div class="stat-icon">
+                                <i data-lucide="check-circle" style="width: 24px; height: 24px;"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject-wise Marks Overview -->
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Subject-wise Examination Performance</span>
+                            <span class="badge" style="background:var(--accent-sage); color:var(--primary);">Session 2026–27</span>
+                        </div>
+                        <div class="card-body" style="padding: 0;">
+                            <div class="table-responsive">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Subject Code</th>
+                                            <th>Subject Name</th>
+                                            <th style="text-align:center;">Maximum Marks</th>
+                                            <th style="text-align:center;">Marks Obtained</th>
+                                            <th style="text-align:center;">Percentage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="student-marks-body">
+                                        <tr><td colspan="5" style="text-align:center;padding:1.5rem;">Loading your examination marks...</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================
+                     SECTION 2: MY PROFILE
+                     ======================================================== -->
+                <section id="section-profile" style="display: none;">
+                    <div class="card" style="max-width: 650px;">
+                        <div class="card-header">
+                            <span class="card-title">Personal Academic Profile</span>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem;">
+                                <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--secondary); color: white; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700;">
+                                    <span id="profile-avatar">S</span>
+                                </div>
+                                <div>
+                                    <h3 id="profile-name" style="color: var(--primary);">Student Name</h3>
+                                    <p id="profile-email">student@mits.ac.in</p>
+                                    <span class="badge" style="background:var(--accent-sage); color:var(--primary); margin-top:4px;">Enrolled Student</span>
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                                <div>
+                                    <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Student ID</p>
+                                    <p id="profile-id" style="font-size: 1rem; font-weight: 600; color: var(--text-main);">--</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Enrollment / Roll No</p>
+                                    <p id="profile-roll" style="font-size: 1rem; font-weight: 600; color: var(--text-main);">--</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Class / Department</p>
+                                    <p id="profile-class" style="font-size: 1rem; font-weight: 600; color: var(--text-main);">--</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Institution</p>
+                                    <p style="font-size: 0.95rem; font-weight: 600; color: var(--text-main);">MITS Gwalior</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================================
+                     SECTION 3: OFFICIAL RESULT / MARK SHEET
+                     ======================================================== -->
+                <section id="section-results" style="display: none;">
+                    <div style="margin-bottom: 1.5rem; display: flex; justify-content: flex-end;">
+                        <button class="btn btn-primary" onclick="window.print()">
+                            <i data-lucide="printer" style="width: 16px; height: 16px;"></i>
+                            Print Official Grade Card
+                        </button>
+                    </div>
+
+                    <!-- Rendered Printable Marksheet -->
+                    <div id="full-marksheet-container">
+                        <!-- Loaded via loadStudentRecord -->
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Guard route: Only Student permitted
+        if (!Auth.requireRole('student')) {
+            throw new Error('Access denied');
+        }
+
+        let myStudentId = 'STU001'; // Default linked student
+
+        async function loadStudentRecord() {
+            try {
+                // Fetch student ID from /api/auth/me
+                const me = await App.apiFetch('/api/auth/me');
+                if (me.student && me.student.student_id) {
+                    myStudentId = me.student.student_id;
+                }
+
+                // Fetch comprehensive result from C++ backend
+                const data = await App.apiFetch(`/api/results/${encodeURIComponent(myStudentId)}`);
+                const s = data.student || {};
+                const r = data.result || {};
+                const marks = data.marks || [];
+
+                // 1. Populate Dashboard Banner & Cards
+                document.getElementById('banner-student-name').textContent = s.name || 'Student';
+                document.getElementById('banner-student-details').textContent = `${s.class || 'B.Tech CSE'} • Roll No: ${s.roll_no || 'N/A'}`;
+
+                if (data.has_result) {
+                    document.getElementById('card-total-marks').textContent = `${r.total_marks} / ${r.maximum_total_marks}`;
+                    document.getElementById('card-percentage').textContent = `${r.percentage.toFixed(2)}%`;
+                    document.getElementById('card-grade').innerHTML = App.formatGradeBadge(r.grade);
+                    document.getElementById('card-status').innerHTML = App.formatStatusBadge(r.result_status);
+                } else {
+                    document.getElementById('card-total-marks').textContent = 'Pending';
+                    document.getElementById('card-percentage').textContent = 'Pending';
+                    document.getElementById('card-grade').textContent = 'Pending';
+                    document.getElementById('card-status').textContent = 'Pending';
+                }
+
+                // 2. Populate Profile View
+                document.getElementById('profile-name').textContent = s.name || 'Student';
+                document.getElementById('profile-id').textContent = s.student_id || 'N/A';
+                document.getElementById('profile-roll').textContent = s.roll_no || 'N/A';
+                document.getElementById('profile-class').textContent = s.class || 'N/A';
+                document.getElementById('profile-avatar').textContent = (s.name || 'S').charAt(0).toUpperCase();
+
+                // 3. Populate Subject-wise table
+                const mBody = document.getElementById('student-marks-body');
+                if (marks.length > 0) {
+                    mBody.innerHTML = marks.map(m => {
+                        const pct = m.maximum_marks > 0 ? ((m.marks_obtained / m.maximum_marks) * 100).toFixed(1) : 0;
+                        return `
+                            <tr>
+                                <td><code>${App.escapeHTML(m.subject_id)}</code></td>
+                                <td><strong>${App.escapeHTML(m.subject_name || m.subject_id)}</strong></td>
+                                <td style="text-align:center;">${m.maximum_marks}</td>
+                                <td style="text-align:center;"><strong>${m.marks_obtained}</strong></td>
+                                <td style="text-align:center;">${pct}%</td>
+                            </tr>
+                        `;
+                    }).join('');
+                } else {
+                    mBody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:1.5rem;">No subject examination marks recorded yet.</td></tr>`;
+                }
+
+                // 4. Populate Full Printable Marksheet
+                renderFullMarksheet(s, r, marks, data.has_result);
+            } catch (err) {
+                console.error('Error loading student record:', err);
+                App.showToast(err.message, 'error');
+            }
+        }
+
+        function renderFullMarksheet(s, r, marks, hasResult) {
+            const container = document.getElementById('full-marksheet-container');
+            if (!container) return;
+
+            let subjectRows = marks.map(m => `
+                <tr>
+                    <td>${App.escapeHTML(m.subject_name || m.subject_id)}</td>
+                    <td style="text-align:center;">${m.maximum_marks}</td>
+                    <td style="text-align:center;"><strong>${m.marks_obtained}</strong></td>
+                    <td style="text-align:center;">${m.maximum_marks > 0 ? ((m.marks_obtained / m.maximum_marks) * 100).toFixed(1) : 0}%</td>
+                </tr>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="marksheet-card">
+                    <div class="marksheet-header">
+                        <h2>Madhav Institute of Technology & Science, Gwalior</h2>
+                        <p style="font-weight:500;color:var(--primary);margin-top:4px;">(A Govt. Aided UGC Autonomous Institute Affiliated to RGPV, Bhopal)</p>
+                        <p style="font-size:0.85rem;margin-top:2px;">Academic Session 2026–27 | Examination Grade Card</p>
+                    </div>
+
+                    <div class="marksheet-details">
+                        <div>
+                            <p style="font-size:0.8rem;text-transform:uppercase;color:var(--text-secondary);">Student Name</p>
+                            <h4 style="color:var(--text-main);">${App.escapeHTML(s.name || 'N/A')}</h4>
+                        </div>
+                        <div>
+                            <p style="font-size:0.8rem;text-transform:uppercase;color:var(--text-secondary);">Enrollment / Roll No</p>
+                            <h4 style="color:var(--text-main);">${App.escapeHTML(s.roll_no || 'N/A')}</h4>
+                        </div>
+                        <div>
+                            <p style="font-size:0.8rem;text-transform:uppercase;color:var(--text-secondary);">Student ID</p>
+                            <p style="font-weight:600;color:var(--text-main);">${App.escapeHTML(s.student_id || 'N/A')}</p>
+                        </div>
+                        <div>
+                            <p style="font-size:0.8rem;text-transform:uppercase;color:var(--text-secondary);">Class / Semester</p>
+                            <p style="font-weight:600;color:var(--text-main);">${App.escapeHTML(s.class || 'N/A')}</p>
+                        </div>
+                    </div>
+
+                    <table class="data-table" style="margin-bottom:1.5rem;border:1px solid var(--border-light);">
+                        <thead>
+                            <tr>
+                                <th>Subject Title</th>
+                                <th style="text-align:center;">Maximum Marks</th>
+                                <th style="text-align:center;">Marks Obtained</th>
+                                <th style="text-align:center;">Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${subjectRows}
+                        </tbody>
+                    </table>
+
+                    ${hasResult ? `
+                        <div class="marksheet-summary-box">
+                            <div>
+                                <p style="font-size:0.75rem;text-transform:uppercase;color:var(--text-secondary);font-weight:600;">Total Aggregate</p>
+                                <h3 style="color:var(--primary);">${r.total_marks} / ${r.maximum_total_marks}</h3>
+                            </div>
+                            <div>
+                                <p style="font-size:0.75rem;text-transform:uppercase;color:var(--text-secondary);font-weight:600;">Percentage</p>
+                                <h3 style="color:var(--secondary);">${r.percentage.toFixed(2)}%</h3>
+                            </div>
+                            <div>
+                                <p style="font-size:0.75rem;text-transform:uppercase;color:var(--text-secondary);font-weight:600;">Grade</p>
+                                <div style="margin-top:4px;">${App.formatGradeBadge(r.grade)}</div>
+                            </div>
+                            <div>
+                                <p style="font-size:0.75rem;text-transform:uppercase;color:var(--text-secondary);font-weight:600;">Academic Status</p>
+                                <div style="margin-top:4px;">${App.formatStatusBadge(r.result_status)}</div>
+                            </div>
+                        </div>
+                    ` : `
+                        <div style="padding:1rem;background:#fefce8;color:#854d0e;border-radius:var(--radius-sm);text-align:center;">
+                            Result calculation pending.
+                        </div>
+                    `}
+
+                    <div style="margin-top:2rem;display:flex;justify-content:space-between;align-items:flex-end;font-size:0.75rem;color:var(--text-secondary);border-top:1px dashed var(--border-light);padding-top:1rem;">
+                        <div>
+                            <p>Automated Calculation by C++ Engine</p>
+                            <p>MITS Gwalior Examination Cell</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <p>Controller of Examinations</p>
+                            <p>MITS Gwalior (M.P.)</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function printCurrentResult() {
+            showSection('results');
+            setTimeout(() => {
+                window.print();
+            }, 300);
+        }
+
+        function showSection(sectionId, el) {
+            document.querySelectorAll('main.content-body > section').forEach(sec => sec.style.display = 'none');
+            document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => item.classList.remove('active'));
+
+            const target = document.getElementById(`section-${sectionId}`);
+            if (target) target.style.display = 'block';
+
+            if (el) el.classList.add('active');
+
+            const titleMap = {
+                'dashboard': 'My Academic Dashboard',
+                'profile': 'My Academic Profile',
+                'results': 'Official Examination Grade Card'
+            };
+            document.getElementById('page-title').textContent = titleMap[sectionId] || 'Student Portal';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            App.initShell();
+            lucide.createIcons();
+            loadStudentRecord();
+        });
+    </script>
+</body>
+</html>

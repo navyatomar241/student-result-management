@@ -1,0 +1,27 @@
+# Environment variables and secrets
+.env
+*.env.local
+
+# Build artifacts and binaries
+build/
+bin/
+*.o
+*.obj
+*.out
+*.app
+student_result_server
+
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local runtime data
+data/database.json.bak
+logs/

@@ -1,0 +1,593 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 15 0 R /F2 16 0 R /F3 17 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 5074 >>
+stream
+0.086 0.306 0.388 rg 48.0 643.0 516.0 95.0 re f
+0.051 0.580 0.533 rg 64.0 691.0 52.0 32.0 re f
+1.000 1.000 1.000 rg
+BT /F2 14 Tf 70 701 Td (MITS) Tj ET
+BT /F2 15 Tf 126 707 Td (STUDENT RESULT MANAGEMENT SYSTEM) Tj ET
+0.863 0.914 0.886 rg
+BT /F1 9.5 Tf 126 691 Td (Comprehensive Project Defense & Viva Voce Master Dossier) Tj ET
+0.980 0.976 0.965 rg
+BT /F1 8.5 Tf 66 663 Td (Madhav Institute of Technology & Science, Gwalior | Academic Session 2026-27 | Department of CSE / IT) Tj ET
+0.941 0.992 0.957 rg 0.525 0.937 0.675 RG 1 w 48.0 553.0 516.0 70.0 re B
+0.086 0.639 0.290 rg 48.0 553.0 4.0 70.0 re f
+0.086 0.639 0.290 rg
+BT /F2 8 Tf 60 609 Td ([TEAM STRATEGY] HOW TO USE THIS GUIDE DURING YOUR EVALUATION) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 60 597 Td (Read this dossier together as a team before entering the lab examination room.) Tj ET
+BT /F1 8 Tf 60 585 Td (Both team partners should split speaking roles: one explains C++ & calculations, one explains Database & UI.) Tj ET
+BT /F1 8 Tf 60 573 Td (Use natural student phrasing instead of AI jargon. Sound like passionate developers who debugged code hands-on.) Tj ET
+0.051 0.580 0.533 rg 48.0 521.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 525 Td (SECTION 1 The 60-Second Elevator Pitch \(Memorize This!\)) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 517.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 509 Td (When the external examiner sits down and says: 'Alright, tell me what your project does and what technologies) Tj ET
+BT /F1 9 Tf 48 496 Td (you used', do NOT recite generic buzzwords. Speak confidently with this exact student pitch:) Tj ET
+0.941 0.992 0.957 rg 0.525 0.937 0.675 RG 1 w 48.0 361.0 516.0 118.0 re B
+0.086 0.639 0.290 rg 48.0 361.0 4.0 118.0 re f
+0.086 0.639 0.290 rg
+BT /F2 8 Tf 60 465 Td ([WORD-FOR-WORD SCRIPT] SCRIPT: WHAT TO SAY VERBATIM IN THE FIRST 60 SECONDS) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 60 453 Td ('Good morning Sir/Ma'am. Our project is a centralized Student Result Management System for collegiate departments.') Tj ET
+BT /F1 8 Tf 60 441 Td ('In our college, marks are frequently maintained on registers and spreadsheets, which leads to duplicate roll numbers,') Tj ET
+BT /F1 8 Tf 60 429 Td ('manual calculation mistakes, and students queuing up outside faculty cabins to view mark sheets.') Tj ET
+BT /F1 8 Tf 60 417 Td ('To solve this, we implemented a 3-tier architecture: Vanilla HTML/CSS/JS frontend, a high-performance C++17 Crow REST backend,') Tj ET
+BT /F1 8 Tf 60 405 Td ('and a Supabase PostgreSQL cloud database with Row Level Security. All business logic, input validation, and result calculations') Tj ET
+BT /F1 8 Tf 60 393 Td ('execute inside compiled C++ functions to ensure tamper-proof calculation and floating-point accuracy. It supports three distinct roles:') Tj ET
+BT /F1 8 Tf 60 381 Td ('Administrator, Faculty, and Student, each with isolated permissions and printable grade cards.') Tj ET
+0.051 0.580 0.533 rg 48.0 329.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 333 Td (SECTION 2 High-Level Architecture \(The Diagram to Draw on the Board\)) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 325.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 317 Td (If the examiner points to the whiteboard and asks: 'Draw your architecture', draw this simple 3-box diagram:) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 300 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 300 Td (Box 1: Presentation Tier \(Frontend\):) Tj ET
+BT /F1 8.5 Tf 255 300 Td (HTML5, CSS3, Vanilla JS, and Supabase JS SDK. No heavy React/Angular) Tj ET
+BT /F1 8.5 Tf 64 288 Td (framework.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 273 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 273 Td (Box 2: Application Tier \(C++ Backend\):) Tj ET
+BT /F1 8.5 Tf 265 273 Td (C++17 Crow framework on Port 18080. Handles token verification &) Tj ET
+BT /F1 8.5 Tf 64 261 Td (result calculations.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 246 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 246 Td (Box 3: Database Tier \(Cloud Storage\):) Tj ET
+BT /F1 8.5 Tf 260 246 Td (Supabase PostgreSQL with Row Level Security \(RLS\) and referential) Tj ET
+BT /F1 8.5 Tf 64 234 Td (integrity constraints.) Tj ET
+0.941 0.992 0.957 rg 0.525 0.937 0.675 RG 1 w 48.0 149.0 516.0 70.0 re B
+0.086 0.639 0.290 rg 48.0 149.0 4.0 70.0 re f
+0.086 0.639 0.290 rg
+BT /F2 8 Tf 60 205 Td ([CLASSIC EXAMINER TRAP] THE TRAP QUESTION: 'Why didn't you calculate percentage in JavaScript?') Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 60 193 Td (Answer: 'Sir, JavaScript runs on the client browser. Any student could press F12, open Developer Tools Console, and change') Tj ET
+BT /F1 8 Tf 60 181 Td ('their marks, total, or grade before it is saved! By keeping calculation in C++, the server has full authority and guarantees') Tj ET
+BT /F1 8 Tf 60 169 Td ('consistent, unalterable academic records.') Tj ET
+0.796 0.835 0.882 RG 0.5 w 48.0 38.0 516.0 0.5 re S
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 26 Td (CONFIDENTIAL - Internal Team Study Guide - Session 2026-27) Tj ET
+BT /F2 8 Tf 519 26 Td (Page 1) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 15 0 R /F2 16 0 R /F3 17 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 6190 >>
+stream
+0.051 0.580 0.533 rg 48.0 716.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 720 Td (SECTION 3 C++ Backend Walkthrough \(File by File\)) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 712.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 704 Td (Examiners love to ask: 'Open your backend folder. What does database.cpp do? Where is your main function?'.) Tj ET
+BT /F1 9 Tf 48 691 Td (Here is the clean breakdown of every single C++ source file in your project:) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 674 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 674 Td (1. main.cpp \(The Central Router\):) Tj ET
+BT /F1 8.5 Tf 239 674 Td (Initializes database, reads environment variables \(PORT,) Tj ET
+BT /F1 8.5 Tf 64 662 Td (SUPABASE_DB_URL\), registers Crow routes like CROW_ROUTE\(app, '/api/students'\), applies role checks, and) Tj ET
+BT /F1 8.5 Tf 64 650 Td (starts the multi-threaded HTTP server.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 635 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 635 Td (2. result.cpp & result.h \(The Calculation Engine\):) Tj ET
+BT /F1 8.5 Tf 328 635 Td (The heart of your project! Contains pure C++ functions:) Tj ET
+BT /F1 8.5 Tf 64 623 Td (calculate_total_obtained\(\), calculate_maximum_total\(\), calculate_percentage\(\), assign_grade\(\), and) Tj ET
+BT /F1 8.5 Tf 64 611 Td (determine_pass_fail\(\).) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 596 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 596 Td (3. database.cpp & database.h \(The Persistence Layer\):) Tj ET
+BT /F1 8.5 Tf 343 596 Td (Encapsulates PostgreSQL table access. Also) Tj ET
+BT /F1 8.5 Tf 64 584 Td (implements an atomic local JSON cache \(data/database.json\) so the project never crashes if the internet) Tj ET
+BT /F1 8.5 Tf 64 572 Td (disconnects during your viva demo!) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 557 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 557 Td (4. auth.cpp & auth.h \(Security & Role Verification\):) Tj ET
+BT /F1 8.5 Tf 338 557 Td (Extracts Bearer token from the HTTP Authorization) Tj ET
+BT /F1 8.5 Tf 64 545 Td (header. Decodes the base64url JWT payload, checks expiration timestamp \(exp\), and verifies user roles) Tj ET
+BT /F1 8.5 Tf 64 533 Td (\(admin, teacher, student\).) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 518 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 518 Td (5. student.cpp & student.h \(Student Management\):) Tj ET
+BT /F1 8.5 Tf 317 518 Td (Handles student CRUD: ID, name, roll_no, class. Enforces) Tj ET
+BT /F1 8.5 Tf 64 506 Td (uniqueness so two students cannot have the same roll number.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 491 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 491 Td (6. teacher.cpp & teacher.h \(Faculty Directory\):) Tj ET
+BT /F1 8.5 Tf 312 491 Td (Handles faculty registration, assigned teaching subjects,) Tj ET
+BT /F1 8.5 Tf 64 479 Td (and faculty profiles.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 464 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 464 Td (7. subject.cpp & subject.h \(Curriculum Subjects\):) Tj ET
+BT /F1 8.5 Tf 322 464 Td (Manages courses. Blocks deletion of a subject if) Tj ET
+BT /F1 8.5 Tf 64 452 Td (students already have exam marks recorded for it \(Foreign key protection\).) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 437 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 437 Td (8. marks.cpp & marks.h \(Marks Entry Controller\):) Tj ET
+BT /F1 8.5 Tf 317 437 Td (Validates that obtained marks are >= 0 and <= maximum) Tj ET
+BT /F1 8.5 Tf 64 425 Td (marks. Saves marks and triggers immediate result recalculation.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 410 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 410 Td (9. CMakeLists.txt & build.sh \(Build Scripts\):) Tj ET
+BT /F1 8.5 Tf 302 410 Td (Standard C++17 build configurations. build.sh compiles with) Tj ET
+BT /F1 8.5 Tf 64 398 Td (clang++ or g++ in under two seconds with -pthread.) Tj ET
+0.051 0.580 0.533 rg 48.0 361.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 365 Td (SECTION 4 The Database Schema & Supabase Setup) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 357.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 349 Td (Examiners often inspect database design to test normalization and constraint knowledge. Explain these 5 core) Tj ET
+BT /F1 9 Tf 48 336 Td (tables:) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 319 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 319 Td (1. students table:) Tj ET
+BT /F1 8.5 Tf 161 319 Td (PK: student_id, UNIQUE: roll_no, class, name, auth_user_id \(references auth user\).) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 304 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 304 Td (2. teachers table:) Tj ET
+BT /F1 8.5 Tf 161 304 Td (PK: teacher_id, name, subject, auth_user_id.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 289 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 289 Td (3. subjects table:) Tj ET
+BT /F1 8.5 Tf 161 289 Td (PK: subject_id, UNIQUE: subject_name.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 274 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 274 Td (4. marks table:) Tj ET
+BT /F1 8.5 Tf 146 274 Td (PK: marks_id, FKs: student_id, subject_id. UNIQUE\(student_id, subject_id\) ensures 1 mark) Tj ET
+BT /F1 8.5 Tf 64 262 Td (per subject.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 247 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 247 Td (5. results table:) Tj ET
+BT /F1 8.5 Tf 156 247 Td (PK: result_id, FK: student_id \(UNIQUE\). Stores total_marks, max_marks, percentage,) Tj ET
+BT /F1 8.5 Tf 64 235 Td (grade, status.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 220 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 220 Td (6. user_profiles table:) Tj ET
+BT /F1 8.5 Tf 187 220 Td (Protected role map linking auth UUID to role \('admin', 'teacher', 'student'\).) Tj ET
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 760 Td (Student Result Management System | MITS Gwalior) Tj ET
+BT /F1 8 Tf 424 760 Td (Team Viva Voce Defense Dossier) Tj ET
+0.796 0.835 0.882 RG 0.5 w 48.0 754.0 516.0 0.5 re S
+0.796 0.835 0.882 RG 0.5 w 48.0 38.0 516.0 0.5 re S
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 26 Td (CONFIDENTIAL - Internal Team Study Guide - Session 2026-27) Tj ET
+BT /F2 8 Tf 519 26 Td (Page 2) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 15 0 R /F2 16 0 R /F3 17 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4976 >>
+stream
+0.051 0.580 0.533 rg 48.0 716.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 720 Td (SECTION 5 The C++ Result Calculation Engine Code Walkthrough) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 712.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 704 Td (If the examiner says: 'Show me your grading logic in C++', navigate directly to backend/result.cpp lines) Tj ET
+BT /F1 9 Tf 48 691 Td (38-60 and explain:) Tj ET
+0.941 0.992 0.957 rg 0.525 0.937 0.675 RG 1 w 48.0 496.0 516.0 178.0 re B
+0.086 0.639 0.290 rg 48.0 496.0 4.0 178.0 re f
+0.086 0.639 0.290 rg
+BT /F2 8 Tf 60 660 Td ([EXACT C++ SOURCE] C++ CODE SNIPPET FROM RESULT.CPP \(MEMORIZE LOGIC\)) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 60 648 Td (double ResultEngine::calculate_percentage\(double total_obtained, double maximum_total\) {) Tj ET
+BT /F1 8 Tf 60 636 Td (    if \(maximum_total <= 0.0\) return 0.0; // Avoid division by zero crash) Tj ET
+BT /F1 8 Tf 60 624 Td (    return std::round\(\(\(total_obtained / maximum_total\) * 100.0\) * 100.0\) / 100.0; // 2 decimal places) Tj ET
+BT /F1 8 Tf 60 612 Td (}) Tj ET
+BT /F1 8 Tf 60 600 Td (std::string ResultEngine::assign_grade\(double percentage\) {) Tj ET
+BT /F1 8 Tf 60 588 Td (    if \(percentage >= 90.0\) return 'A+';      else if \(percentage >= 80.0\) return 'A';) Tj ET
+BT /F1 8 Tf 60 576 Td (    else if \(percentage >= 70.0\) return 'B'; else if \(percentage >= 60.0\) return 'C';) Tj ET
+BT /F1 8 Tf 60 564 Td (    else if \(percentage >= 40.0\) return 'D'; else return 'Fail';) Tj ET
+BT /F1 8 Tf 60 552 Td (}) Tj ET
+BT /F1 8 Tf 60 540 Td (std::string ResultEngine::determine_pass_fail\(double percentage\) {) Tj ET
+BT /F1 8 Tf 60 528 Td (    return \(percentage >= 40.0\) ? 'Pass' : 'Fail';) Tj ET
+BT /F1 8 Tf 60 516 Td (}) Tj ET
+0.051 0.580 0.533 rg 48.0 464.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 468 Td (SECTION 6 Top 15 Tough Viva Questions & Exact Model Answers) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 460.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 452 Td (Here are the exact questions external examiners love to ask, along with the precise answers you should give:) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 338.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 417.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 422 Td (Q1: Why use C++ for a web app instead of Node.js or Python Django?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 405 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 394 Td (C++ provides compiled execution speed, low memory overhead, and strict type safety. In) Tj ET
+BT /F1 8 Tf 56 384 Td (academic micro-projects, it demonstrates systems programming and socket handling rather than) Tj ET
+BT /F1 8 Tf 56 374 Td (relying on bloated runtime packages.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 363 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 363 Td (They want to ensure you didn't just pick a stack randomly or because of a tutorial.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 233.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 312.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 317 Td (Q2: What is Crow, and how does routing work?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 300 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 289 Td (Crow is a modern C++17 microframework inspired by Flask. It uses C++ templates and POSIX) Tj ET
+BT /F1 8 Tf 56 279 Td (sockets to bind routes like CROW_ROUTE\(app, '/api/students'\). It parses headers, query) Tj ET
+BT /F1 8 Tf 56 269 Td (parameters, and JSON payloads.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 258 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 258 Td (They test whether you know what third-party libraries you actually included.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 139.0 516.0 86.0 re B
+0.086 0.306 0.388 rg 48.0 207.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 212 Td (Q3: What happens if a student scores exactly 39.9%? What grade do they get?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 195 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 184 Td (They receive grade 'Fail' and status 'Fail'. Our C++ rule is strictly percentage >= 40.0% for) Tj ET
+BT /F1 8 Tf 56 174 Td ('D Pass'. 39.9% is below 40%, so our test suite confirms it fails.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 163 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 163 Td (Examiners frequently test boundary conditions and edge cases.) Tj ET
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 760 Td (Student Result Management System | MITS Gwalior) Tj ET
+BT /F1 8 Tf 424 760 Td (Team Viva Voce Defense Dossier) Tj ET
+0.796 0.835 0.882 RG 0.5 w 48.0 754.0 516.0 0.5 re S
+0.796 0.835 0.882 RG 0.5 w 48.0 38.0 516.0 0.5 re S
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 26 Td (CONFIDENTIAL - Internal Team Study Guide - Session 2026-27) Tj ET
+BT /F2 8 Tf 519 26 Td (Page 3) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 15 0 R /F2 16 0 R /F3 17 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 5526 >>
+stream
+0.051 0.580 0.533 rg 48.0 716.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 720 Td (SECTION 6 \(CONT.\) External Examiner Viva Questions 4 to 9) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 712.0 516.0 0.5 re S
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 618.0 516.0 86.0 re B
+0.086 0.306 0.388 rg 48.0 686.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 691 Td (Q4: What happens if a subject has maximum marks = 0?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 674 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 663 Td (In result.cpp, calculate_percentage\(\) checks if \(maximum_total <= 0.0\) return 0.0;. This) Tj ET
+BT /F1 8 Tf 56 653 Td (explicitly prevents an IEEE floating-point division-by-zero or SIGFPE crash.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 642 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 642 Td (Classic defensive programming question.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 513.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 592.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 597 Td (Q5: How do you prevent a student from seeing other students' results?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 580 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 569 Td (Two-layer defense: First, the C++ backend checks if role == 'student'. If so, it verifies that) Tj ET
+BT /F1 8 Tf 56 559 Td (the requested student_id matches their own auth_user_id. Second, Supabase PostgreSQL Row Level) Tj ET
+BT /F1 8 Tf 56 549 Td (Security \(RLS\) blocks queries for other user IDs.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 538 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 538 Td (Data isolation and privacy question.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 408.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 487.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 492 Td (Q6: How do you verify a JWT token in C++ without external heavy crypto libraries?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 475 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 464 Td (In auth.cpp, we extract the Bearer token, split by '.', and base64url decode the payload) Tj ET
+BT /F1 8 Tf 56 454 Td (segment. We parse the JSON, check that the exp \(expiration epoch\) is greater than) Tj ET
+BT /F1 8 Tf 56 444 Td (system_clock::now\(\), and match the sub user ID.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 433 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 433 Td (Examiners want to see if you understand how JWT tokens actually work under the hood.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 303.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 382.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 387 Td (Q7: What happens if you try to enter 105 marks out of 100?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 370 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 359 Td (The request is rejected with HTTP 400 Bad Request. Both frontend client validation and C++) Tj ET
+BT /F1 8 Tf 56 349 Td (marks.cpp check if \(marks_obtained > maximum_marks\). In SQL, CHECK \(marks_obtained <=) Tj ET
+BT /F1 8 Tf 56 339 Td (maximum_marks\) also blocks it.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 328 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 328 Td (Integrity and input validation test.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 198.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 277.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 282 Td (Q8: What happens if you delete a subject that already has marks assigned?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 265 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 254 Td (Deletion is blocked! In database.cpp, delete_subject\(\) checks if) Tj ET
+BT /F1 8 Tf 56 244 Td (subject_has_marks\(subject_id\). If marks exist, it returns an error. In PostgreSQL, CONSTRAINT) Tj ET
+BT /F1 8 Tf 56 234 Td (fk_marks_subject has ON DELETE RESTRICT.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 223 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 223 Td (Foreign key constraint and referential integrity check.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 93.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 172.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 177 Td (Q9: Where are user passwords stored in your database?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 160 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 149 Td (Passwords are NEVER stored in our application database or C++ code! Supabase Auth securely) Tj ET
+BT /F1 8 Tf 56 139 Td (manages user passwords using bcrypt/Argon2 hashing inside auth.users. Our application only) Tj ET
+BT /F1 8 Tf 56 129 Td (handles secure JWT access tokens.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 118 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 118 Td (Crucial security question. Never say passwords are in plaintext or in your database!) Tj ET
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 760 Td (Student Result Management System | MITS Gwalior) Tj ET
+BT /F1 8 Tf 424 760 Td (Team Viva Voce Defense Dossier) Tj ET
+0.796 0.835 0.882 RG 0.5 w 48.0 754.0 516.0 0.5 re S
+0.796 0.835 0.882 RG 0.5 w 48.0 38.0 516.0 0.5 re S
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 26 Td (CONFIDENTIAL - Internal Team Study Guide - Session 2026-27) Tj ET
+BT /F2 8 Tf 519 26 Td (Page 4) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 15 0 R /F2 16 0 R /F3 17 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 5115 >>
+stream
+0.051 0.580 0.533 rg 48.0 716.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 720 Td (SECTION 6 \(CONT.\) External Examiner Viva Questions 10 to 15) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 712.0 516.0 0.5 re S
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 607.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 686.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 691 Td (Q10: What is Row Level Security \(RLS\) in PostgreSQL?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 674 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 663 Td (RLS is a database security feature where PostgreSQL evaluates row access policies for each SQL) Tj ET
+BT /F1 8 Tf 56 653 Td (statement. For example, our policy 'Students can view only own record' enforces that SELECT) Tj ET
+BT /F1 8 Tf 56 643 Td (queries only return rows matching auth.uid\(\).) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 632 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 632 Td (Tests database security knowledge.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 513.0 516.0 86.0 re B
+0.086 0.306 0.388 rg 48.0 581.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 586 Td (Q11: Can a teacher delete a student from the system?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 569 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 558 Td (No. In main.cpp, the DELETE /api/students/<id> route checks AuthManager::check_role\(ctx,) Tj ET
+BT /F1 8 Tf 56 548 Td ({'admin'}\). If a teacher tries, the backend returns HTTP 403 Forbidden.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 537 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 537 Td (Role-Based Access Control \(RBAC\) test.) Tj ET
+1.000 1.000 1.000 rg 0.886 0.910 0.941 RG 0.8 w 48.0 408.0 516.0 97.0 re B
+0.086 0.306 0.388 rg 48.0 487.0 516.0 18.0 re f
+1.000 1.000 1.000 rg
+BT /F2 8.5 Tf 56 492 Td (Q12: How do you compile your C++ backend on Linux or macOS?) Tj ET
+0.059 0.463 0.431 rg
+BT /F2 8 Tf 56 475 Td (EXACT MODEL ANSWER:) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 56 464 Td (We execute ./build.sh, which runs clang++ -std=c++17 -pthread -Ibackend/include backend/*.cpp) Tj ET
+BT /F1 8 Tf 56 454 Td (-o bin/student_result_server. Alternatively, we use CMake with mkdir build && cd build &&) Tj ET
+BT /F1 8 Tf 56 444 Td (cmake ../backend && make.) Tj ET
+0.604 0.204 0.071 rg
+BT /F2 7.5 Tf 56 433 Td (WHY THEY ASK / GOTCHA: ) Tj ET
+0.278 0.333 0.412 rg
+BT /F1 7.5 Tf 178 433 Td (Build tools and compiler flags question.) Tj ET
+0.051 0.580 0.533 rg 48.0 378.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 382 Td (SECTION 7 The 5-Minute Live Demo Presentation Script) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 374.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 366 Td (Follow these exact steps during your practical demonstration to leave zero room for doubt:) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 349 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 349 Td (Step 1 \(Open Login\):) Tj ET
+BT /F1 8.5 Tf 172 349 Td (Open http://localhost:3001/login.html. Click 'Admin' quick button. Show how the role) Tj ET
+BT /F1 8.5 Tf 64 337 Td (button dynamically updates the form.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 322 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 322 Td (Step 2 \(Admin Dashboard\):) Tj ET
+BT /F1 8.5 Tf 198 322 Td (Point out the 4 real-time stat cards \(Total Students, Teachers, Subjects,) Tj ET
+BT /F1 8.5 Tf 64 310 Td (Results\). Click 'Add Student' and add a sample student \(e.g., STU006, Mohit Verma, 0901CS241006\).) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 295 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 295 Td (Step 3 \(Teacher Marks Entry\):) Tj ET
+BT /F1 8.5 Tf 218 295 Td (Log out. Sign in as Teacher. Navigate to 'Enter & Manage Marks'. Select the) Tj ET
+BT /F1 8.5 Tf 64 283 Td (new student, select 'Object Oriented Programming with C++', enter 92 marks out of 100, and click Save.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 268 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 268 Td (Step 4 \(Show Automatic Recalculation\):) Tj ET
+BT /F1 8.5 Tf 265 268 Td (Show the toast message: 'Marks saved & result recalculated by C++) Tj ET
+BT /F1 8.5 Tf 64 256 Td (engine'. Explain that C++ immediately computed the percentage \(92.00%\) and assigned grade A+.) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 241 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 241 Td (Step 5 \(Student Mark Sheet & Print\):) Tj ET
+BT /F1 8.5 Tf 255 241 Td (Log out. Sign in as Student. Show their personal grade card with all) Tj ET
+BT /F1 8.5 Tf 64 229 Td (subjects. Click 'Print Official Grade Card' to trigger the clean print preview.) Tj ET
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 760 Td (Student Result Management System | MITS Gwalior) Tj ET
+BT /F1 8 Tf 424 760 Td (Team Viva Voce Defense Dossier) Tj ET
+0.796 0.835 0.882 RG 0.5 w 48.0 754.0 516.0 0.5 re S
+0.796 0.835 0.882 RG 0.5 w 48.0 38.0 516.0 0.5 re S
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 26 Td (CONFIDENTIAL - Internal Team Study Guide - Session 2026-27) Tj ET
+BT /F2 8 Tf 519 26 Td (Page 5) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 15 0 R /F2 16 0 R /F3 17 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 4048 >>
+stream
+0.051 0.580 0.533 rg 48.0 716.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 720 Td (SECTION 8 'AI Red Flags' That Trigger Examiners — And What to Say Instead) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 712.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 704 Td (External examiners can instantly tell when students used AI if they start reciting robotic textbook) Tj ET
+BT /F1 9 Tf 48 691 Td (definitions. Review these contrast tables so you speak naturally like student coders:) Tj ET
+0.941 0.992 0.957 rg 0.525 0.937 0.675 RG 1 w 48.0 544.0 516.0 130.0 re B
+0.086 0.639 0.290 rg 48.0 544.0 4.0 130.0 re f
+0.086 0.639 0.290 rg
+BT /F2 8 Tf 60 660 Td ([LANGUAGE FILTER] HOW TO TALK LIKE A GENUINE STUDENT DEVELOPER) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 60 648 Td (DON'T SAY: 'We architected a synergistic cloud-native paradigm leveraging asynchronous microservices...') Tj ET
+BT /F1 8 Tf 60 636 Td (DO SAY: 'We built a C++ web server using Crow that talks to a Supabase database over SQL and REST endpoints.') Tj ET
+BT /F1 8 Tf 60 624 Td () Tj ET
+BT /F1 8 Tf 60 612 Td (DON'T SAY: 'The solution incorporates robust automated state management mechanisms...') Tj ET
+BT /F1 8 Tf 60 600 Td (DO SAY: 'When marks are updated, result.cpp runs calculate_percentage\(\) and saves the grade to results table.') Tj ET
+BT /F1 8 Tf 60 588 Td () Tj ET
+BT /F1 8 Tf 60 576 Td (DON'T SAY: 'The platform mitigates adversarial intrusion vectors through cryptographic hashing...') Tj ET
+BT /F1 8 Tf 60 564 Td (DO SAY: 'We verify the JWT token header on every request so unauthorized users can't edit marks.') Tj ET
+0.051 0.580 0.533 rg 48.0 512.0 4.0 18.0 re f
+0.086 0.306 0.388 rg
+BT /F2 12.5 Tf 60 516 Td (SECTION 9 Team Division of Work \(When Asked 'Who Did What?'\)) Tj ET
+0.886 0.910 0.941 RG 0.5 w 48.0 508.0 516.0 0.5 re S
+0.149 0.196 0.220 rg
+BT /F1 9 Tf 48 500 Td (Examiners always ask: 'What did partner A do, and what did partner B do?'. Here is your prepared division:) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 483 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 483 Td (Partner 1 \(Backend & Calculations Lead\):) Tj ET
+BT /F1 8.5 Tf 276 483 Td (Responsible for C++17 Crow REST backend, result calculation) Tj ET
+BT /F1 8.5 Tf 64 471 Td (engine \(result.cpp\), JWT token verification \(auth.cpp\), and unit testing edge cases \(test_suite.cpp\).) Tj ET
+0.051 0.580 0.533 rg
+BT /F2 10 Tf 51 456 Td (>) Tj ET
+0.149 0.196 0.220 rg
+BT /F2 8.5 Tf 64 456 Td (Partner 2 \(Database & UI/Frontend Lead\):) Tj ET
+BT /F1 8.5 Tf 276 456 Td (Responsible for Supabase PostgreSQL database schema \(schema.sql\),) Tj ET
+BT /F1 8.5 Tf 64 444 Td (Row Level Security policies \(policies.sql\), HTML/CSS/JavaScript dashboards, and printable mark sheet) Tj ET
+BT /F1 8.5 Tf 64 432 Td (styling.) Tj ET
+0.941 0.992 0.957 rg 0.525 0.937 0.675 RG 1 w 48.0 323.0 516.0 94.0 re B
+0.086 0.639 0.290 rg 48.0 323.0 4.0 94.0 re f
+0.086 0.639 0.290 rg
+BT /F2 8 Tf 60 403 Td ([EXAM DAY CHECKLIST] FINAL CONFIDENCE CHECKLIST BEFORE YOU ENTER THE LAB) Tj ET
+0.118 0.161 0.231 rg
+BT /F1 8 Tf 60 391 Td ([X] Make sure backend is running: ./bin/student_result_server \(Port 18080\)) Tj ET
+BT /F1 8 Tf 60 379 Td ([X] Make sure frontend server is running: python3 -m http.server 3001) Tj ET
+BT /F1 8 Tf 60 367 Td ([X] Keep the test suite command handy: ./bin/test_suite \(Runs all 20 tests in 0.05 seconds\)) Tj ET
+BT /F1 8 Tf 60 355 Td ([X] Remember the grading boundaries: 90+ is A+, 80+ is A, 70+ is B, 60+ is C, 40+ is D, <40 is Fail.) Tj ET
+BT /F1 8 Tf 60 343 Td ([X] Smile, be polite, address the examiner as 'Sir' or 'Ma'am', and speak with confidence!) Tj ET
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 760 Td (Student Result Management System | MITS Gwalior) Tj ET
+BT /F1 8 Tf 424 760 Td (Team Viva Voce Defense Dossier) Tj ET
+0.796 0.835 0.882 RG 0.5 w 48.0 754.0 516.0 0.5 re S
+0.796 0.835 0.882 RG 0.5 w 48.0 38.0 516.0 0.5 re S
+0.392 0.455 0.545 rg
+BT /F1 8 Tf 48 26 Td (CONFIDENTIAL - Internal Team Study Guide - Session 2026-27) Tj ET
+BT /F2 8 Tf 519 26 Td (Page 6) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+16 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+17 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000147 00000 n 
+0000000296 00000 n 
+0000005422 00000 n 
+0000005571 00000 n 
+0000011813 00000 n 
+0000011962 00000 n 
+0000016990 00000 n 
+0000017140 00000 n 
+0000022719 00000 n 
+0000022870 00000 n 
+0000028038 00000 n 
+0000028189 00000 n 
+0000032290 00000 n 
+0000032361 00000 n 
+0000032437 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R >>
+startxref
+32506
+%%EOF

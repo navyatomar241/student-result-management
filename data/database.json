@@ -1,0 +1,393 @@
+{
+  "marks": [
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK001",
+      "marks_obtained": 94,
+      "maximum_marks": 100,
+      "student_id": "STU001",
+      "student_name": "Aarav Sharma",
+      "subject_id": "SUB101",
+      "subject_name": "Object Oriented Programming with C++",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK002",
+      "marks_obtained": 91,
+      "maximum_marks": 100,
+      "student_id": "STU001",
+      "student_name": "Aarav Sharma",
+      "subject_id": "SUB102",
+      "subject_name": "Database Management Systems",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK003",
+      "marks_obtained": 95,
+      "maximum_marks": 100,
+      "student_id": "STU001",
+      "student_name": "Aarav Sharma",
+      "subject_id": "SUB103",
+      "subject_name": "Data Structures & Algorithms",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK004",
+      "marks_obtained": 88,
+      "maximum_marks": 100,
+      "student_id": "STU001",
+      "student_name": "Aarav Sharma",
+      "subject_id": "SUB104",
+      "subject_name": "Computer Networks",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK005",
+      "marks_obtained": 92,
+      "maximum_marks": 100,
+      "student_id": "STU001",
+      "student_name": "Aarav Sharma",
+      "subject_id": "SUB105",
+      "subject_name": "Discrete Mathematics",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK006",
+      "marks_obtained": 82,
+      "maximum_marks": 100,
+      "student_id": "STU002",
+      "student_name": "Priya Patel",
+      "subject_id": "SUB101",
+      "subject_name": "Object Oriented Programming with C++",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK007",
+      "marks_obtained": 85,
+      "maximum_marks": 100,
+      "student_id": "STU002",
+      "student_name": "Priya Patel",
+      "subject_id": "SUB102",
+      "subject_name": "Database Management Systems",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK008",
+      "marks_obtained": 88,
+      "maximum_marks": 100,
+      "student_id": "STU002",
+      "student_name": "Priya Patel",
+      "subject_id": "SUB103",
+      "subject_name": "Data Structures & Algorithms",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK009",
+      "marks_obtained": 79,
+      "maximum_marks": 100,
+      "student_id": "STU002",
+      "student_name": "Priya Patel",
+      "subject_id": "SUB104",
+      "subject_name": "Computer Networks",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK010",
+      "marks_obtained": 81,
+      "maximum_marks": 100,
+      "student_id": "STU002",
+      "student_name": "Priya Patel",
+      "subject_id": "SUB105",
+      "subject_name": "Discrete Mathematics",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK011",
+      "marks_obtained": 72,
+      "maximum_marks": 100,
+      "student_id": "STU003",
+      "student_name": "Rohan Gupta",
+      "subject_id": "SUB101",
+      "subject_name": "Object Oriented Programming with C++",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK012",
+      "marks_obtained": 74,
+      "maximum_marks": 100,
+      "student_id": "STU003",
+      "student_name": "Rohan Gupta",
+      "subject_id": "SUB102",
+      "subject_name": "Database Management Systems",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK013",
+      "marks_obtained": 70,
+      "maximum_marks": 100,
+      "student_id": "STU003",
+      "student_name": "Rohan Gupta",
+      "subject_id": "SUB103",
+      "subject_name": "Data Structures & Algorithms",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK014",
+      "marks_obtained": 75,
+      "maximum_marks": 100,
+      "student_id": "STU003",
+      "student_name": "Rohan Gupta",
+      "subject_id": "SUB104",
+      "subject_name": "Computer Networks",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK015",
+      "marks_obtained": 71,
+      "maximum_marks": 100,
+      "student_id": "STU003",
+      "student_name": "Rohan Gupta",
+      "subject_id": "SUB105",
+      "subject_name": "Discrete Mathematics",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK016",
+      "marks_obtained": 65,
+      "maximum_marks": 100,
+      "student_id": "STU004",
+      "student_name": "Ananya Singh",
+      "subject_id": "SUB101",
+      "subject_name": "Object Oriented Programming with C++",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK017",
+      "marks_obtained": 62,
+      "maximum_marks": 100,
+      "student_id": "STU004",
+      "student_name": "Ananya Singh",
+      "subject_id": "SUB102",
+      "subject_name": "Database Management Systems",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK018",
+      "marks_obtained": 68,
+      "maximum_marks": 100,
+      "student_id": "STU004",
+      "student_name": "Ananya Singh",
+      "subject_id": "SUB103",
+      "subject_name": "Data Structures & Algorithms",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK019",
+      "marks_obtained": 61,
+      "maximum_marks": 100,
+      "student_id": "STU004",
+      "student_name": "Ananya Singh",
+      "subject_id": "SUB104",
+      "subject_name": "Computer Networks",
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "marks_id": "MRK020",
+      "marks_obtained": 64,
+      "maximum_marks": 100,
+      "student_id": "STU004",
+      "student_name": "Ananya Singh",
+      "subject_id": "SUB105",
+      "subject_name": "Discrete Mathematics",
+      "updated_at": "2026-11-23T15:02:45Z"
+    }
+  ],
+  "profiles": [
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "email": "admin@mits.ac.in",
+      "id": "auth-admin-001",
+      "name": "System Administrator",
+      "role": "admin"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "email": "teacher@mits.ac.in",
+      "id": "auth-teacher-001",
+      "name": "Dr. Rajesh Kumar Sharma",
+      "role": "teacher"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "email": "student@mits.ac.in",
+      "id": "auth-student-001",
+      "name": "Aarav Sharma",
+      "role": "student"
+    }
+  ],
+  "results": [
+    {
+      "class": "B.Tech CSE III Sem",
+      "grade": "A+",
+      "maximum_total_marks": 500,
+      "percentage": 92,
+      "result_id": "RES001",
+      "result_status": "Pass",
+      "roll_no": "0901CS241001",
+      "student_id": "STU001",
+      "student_name": "Aarav Sharma",
+      "total_marks": 460,
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "class": "B.Tech CSE III Sem",
+      "grade": "A",
+      "maximum_total_marks": 500,
+      "percentage": 83,
+      "result_id": "RES002",
+      "result_status": "Pass",
+      "roll_no": "0901CS241002",
+      "student_id": "STU002",
+      "student_name": "Priya Patel",
+      "total_marks": 415,
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "class": "B.Tech CSE III Sem",
+      "grade": "B",
+      "maximum_total_marks": 500,
+      "percentage": 72.40,
+      "result_id": "RES003",
+      "result_status": "Pass",
+      "roll_no": "0901CS241003",
+      "student_id": "STU003",
+      "student_name": "Rohan Gupta",
+      "total_marks": 362,
+      "updated_at": "2026-11-23T15:02:45Z"
+    },
+    {
+      "class": "B.Tech CSE III Sem",
+      "grade": "C",
+      "maximum_total_marks": 500,
+      "percentage": 64,
+      "result_id": "RES004",
+      "result_status": "Pass",
+      "roll_no": "0901CS241004",
+      "student_id": "STU004",
+      "student_name": "Ananya Singh",
+      "total_marks": 320,
+      "updated_at": "2026-11-23T15:02:45Z"
+    }
+  ],
+  "students": [
+    {
+      "auth_user_id": "auth-student-001",
+      "class": "B.Tech CSE III Sem",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Aarav Sharma",
+      "roll_no": "0901CS241001",
+      "student_id": "STU001"
+    },
+    {
+      "auth_user_id": "",
+      "class": "B.Tech CSE III Sem",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Priya Patel",
+      "roll_no": "0901CS241002",
+      "student_id": "STU002"
+    },
+    {
+      "auth_user_id": "",
+      "class": "B.Tech CSE III Sem",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Rohan Gupta",
+      "roll_no": "0901CS241003",
+      "student_id": "STU003"
+    },
+    {
+      "auth_user_id": "",
+      "class": "B.Tech CSE III Sem",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Ananya Singh",
+      "roll_no": "0901CS241004",
+      "student_id": "STU004"
+    },
+    {
+      "auth_user_id": "",
+      "class": "B.Tech CSE III Sem",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Vikramaditya Verma",
+      "roll_no": "0901CS241005",
+      "student_id": "STU005"
+    }
+  ],
+  "subjects": [
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "subject_id": "SUB101",
+      "subject_name": "Object Oriented Programming with C++"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "subject_id": "SUB102",
+      "subject_name": "Database Management Systems"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "subject_id": "SUB103",
+      "subject_name": "Data Structures & Algorithms"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "subject_id": "SUB104",
+      "subject_name": "Computer Networks"
+    },
+    {
+      "created_at": "2026-11-23T15:02:45Z",
+      "subject_id": "SUB105",
+      "subject_name": "Discrete Mathematics"
+    }
+  ],
+  "teachers": [
+    {
+      "auth_user_id": "auth-teacher-001",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Dr. Rajesh Kumar Sharma",
+      "subject": "Object Oriented Programming with C++",
+      "teacher_id": "TCH001"
+    },
+    {
+      "auth_user_id": "",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Prof. Sunita Verma",
+      "subject": "Database Management Systems",
+      "teacher_id": "TCH002"
+    },
+    {
+      "auth_user_id": "",
+      "created_at": "2026-11-23T15:02:45Z",
+      "name": "Dr. Amit Dixit",
+      "subject": "Data Structures & Algorithms",
+      "teacher_id": "TCH003"
+    }
+  ]
+}
